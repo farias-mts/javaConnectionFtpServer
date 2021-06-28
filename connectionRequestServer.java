@@ -6,12 +6,12 @@ import org.apache.commons.net.ftp.*;
 import java.io.InputStream;
 public class connectionRequestServer {
     public static void main(String[]args){
-        String server = "192.168.1.170";
+        String server = "your server";
         Integer port = 21;
-        String user = "po75";
-        String pass = "W193410s@";
+        String user = "your user";
+        String pass = "your pass";
 
-        String search = "Tudo Azul";
+        String search = "What´s search?";
         Integer quantity = 5;
         FTPClient ftpClient = new FTPClient();
         try{
@@ -25,7 +25,7 @@ public class connectionRequestServer {
             Integer count = 0;
             String pathfile = "/Matheus/InterfacesTests/SoapRequest/";
             for(String content : metaLink.eachAttr("content")){
-                System.out.println(content);
+                //System.out.println(content);
                 count++;
                 try (InputStream inputStream = new URL(content).openStream()) {
                     ftpClient.storeFile(pathfile+String.format("%s_%d", search.replace(" ", "_"), count)+".jpg", inputStream);

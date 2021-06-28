@@ -11,7 +11,7 @@ public class connectionRequestServer {
         String user = "po75";
         String pass = "W193410s@";
 
-        String search = "Tudo roxo";
+        String search = "Tudo Azul";
         Integer quantity = 5;
         FTPClient ftpClient = new FTPClient();
         try{
@@ -23,8 +23,9 @@ public class connectionRequestServer {
             Document doc = Jsoup.connect(link).get();
             Elements metaLink = doc.select("meta[itemprop=thumbnailUrl]");
             Integer count = 0;
-            String pathfile = "/Matheus/InterfacesTests/SoapRequest";
+            String pathfile = "/Matheus/InterfacesTests/SoapRequest/";
             for(String content : metaLink.eachAttr("content")){
+                System.out.println(content);
                 count++;
                 try (InputStream inputStream = new URL(content).openStream()) {
                     ftpClient.storeFile(pathfile+String.format("%s_%d", search.replace(" ", "_"), count)+".jpg", inputStream);

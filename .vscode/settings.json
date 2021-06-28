@@ -1,6 +1,7 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
+        "c:\\Users\\faria\\OneDrive\\Documentos\\Dev\\Java\\libraries\\jsoup-1.13.1.jar",
         "c:\\Users\\faria\\OneDrive\\Documentos\\Dev\\Java\\libraries\\commons-net-3.8.0.jar"
     ]
 }
